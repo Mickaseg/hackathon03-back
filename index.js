@@ -9,6 +9,7 @@ const article = require("./src/routes/article.js");
 
 const app = express();
 
+app.use("/public", express.static("public"));
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
