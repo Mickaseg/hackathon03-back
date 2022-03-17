@@ -4,7 +4,7 @@ const Router = express.Router();
 
 Router.get("/questions/theme1", (req, res) => {
   const sql =
-    "SELECT q.id, q.question_text FROM questions AS q INNER JOIN theme AS t ON t.id=q.theme_id WHERE t.id= 1;";
+    "SELECT q.id, q.question_text, q.image FROM questions AS q INNER JOIN theme AS t ON t.id=q.theme_id WHERE t.id= 1;";
   mysql.query(sql, (err, result) => {
     if (err) throw err;
     else return res.status(200).json(result);
